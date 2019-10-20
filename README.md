@@ -1,6 +1,6 @@
 # LinuxEverything-Django-Website
 
-This is a basic website so that a user when shifting from windows to linux faces various issues while handling various things this site helps in making thing easier.
+This is a basic website so that a user when shifting from windows to linux faces various issues while handling various things, this site helps in making things easier.
 
 # File Structure
 - Main App<br>
