@@ -1,0 +1,102 @@
+{% extends 'base_layout.html' %}
+
+{% load static from staticfiles %}
+
+{% block content %}
+
+<h2>Contact us</h2>
+
+<style>
+	.bg {
+		background-image: url("https://cdn.pjwd.net/uploads/images/about-us.png");
+		object-fit: cover;
+		height: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+
+	@font-face
+	{
+		font-family: iceland;
+		src:url(Iceland.ttf);
+	}
+	body
+	{
+		font-family: sans-serif;
+	}
+
+	.add{
+		background-color: black;
+	}
+	.add:hover{
+
+	}
+
+
+</style>
+	<div class="container">
+		<div class="bg" >
+			<br><br><br><br><br><br><br><br><br><br><br><br><br>
+		</div>
+
+		<div>
+			<br>
+			<p class="text-center">The Linux everythingis dedicated to building sustainable ecosystems around open source projects to accelerate technology development and industry adoption.</p>
+			<br>
+			<p class="text-center"> The Linux everything  provides unparalleled support for open source communities through financial and intellectual resources, infrastructure, services, events, and training. Working together, The Linux everything and its projects form the most ambitious and successful investment in the creation of shared technology.</p>
+			<br>
+		</div>
+
+		<div class="row ">
+
+			<div class="card add" style="width: 17rem; padding-right: 10px;">
+				<img class="card-img-top" src="{% static 'and.jpg' %}" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Aditya Mahajan</h5>
+					<p class="card-text">Lead Developer</p>
+					<a href="http://adityamahajan.co.nf/#home" class="btn btn-primary">Know More</a>
+				</div>
+			</div>
+
+			<!--
+			<div class="card add" style="width: 17rem; padding-right: 10px;">
+				<img class="card-img-top" src="{% static 'gangu.jpg' %}" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Chandrakant Gangone</h5>
+					<p class="card-text">Developer</p>
+					<a href="#" class="btn btn-primary">Know More</a>
+				</div>
+			</div>
+
+
+			<div class="card add" style="width: 17rem; padding-right: 10px;">
+				<img class="card-img-top" src="{% static 'und.jpg' %}" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Shruti Undratwad</h5>
+					<p class="card-text">Developer</p>
+					<a href="http://adityamahajan.co.nf/#home" class="btn btn-primary">Know More</a>
+				</div>
+			</div>
+
+			<div class="card add" style="width: 17rem; ">
+				<img class="card-img-top" src="{% static 'khandu.jpg' %}" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Shruti Kandhare</h5>
+					<p class="card-text">Developer</p>
+					<a href="#" class="btn btn-primary">Know More</a>
+				</div>
+			</div>
+			-->
+
+		</div>
+
+
+
+		<br><br>
+	</div>
+</div>
+
+
+{% endblock %}
