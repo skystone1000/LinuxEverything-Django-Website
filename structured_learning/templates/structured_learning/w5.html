@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File permissions in Linux</title>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+         <style>
+          body{
+           position : relative;
+         } 
+
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+          </style>
+	</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+        <div id="How does Linux differ from other Operating systems?" class="container-fluid " style="padding-top:70px;padding-bottom:70px">
+
+                        <div class="container bg-secondary">
+                           <div class="jumbotron">
+                        <p> 
+
+                         Linux is a clone of UNIX, the multi-user operating system which can be accessed by many users simultaneously. Linux can also be used in mainframes and servers without any modifications. But this raises security concerns as an unsolicited or malign user can corrupt, change or remove crucial data. For effective security, Linux divides authorization into 2 levels.<br>
+
+                         <ol type: "numbers">
+
+                         <li>Ownership</li>
+                         <li>Permission</li>
+                         </ol>
+                          <ul><h3>In this tutorial, you will learn-</h3>
+                          <li>Ownership of Linux files</li>
+                         <li>Permissions</li>
+                         <li>Changing file/directory permissions with 'chmod' command</li>
+                         <li>Absolute(Numeric) Mode</li>
+                         <li>Symbolic Mode</li>
+                         <li>Changing Ownership and Group</li>
+                         <li>Summary</li>
+                         </ul>
+                         The concept of permissions and ownership is crucial in Linux. Here, we will discuss both of them. Let us start with the Ownership. </p>
+                         <p> <h2>Ownership of Linux files</h2>
+
+                             Every file and directory on your Unix/Linux system is assigned 3 types of owner, given below.
+                                 <h3>User</h3>
+
+                             A user is the owner of the file. By default, the person who created a file becomes its owner. Hence, a user is also sometimes called an owner.<br><br>
+                             <h3>Group</h3>
+
+                             A user- group can contain multiple users. All users belonging to a group will have the same access permissions to the file. Suppose you have a project where a number of people require access to a file. Instead of manually assigning permissions to each user, you could add all users to a group, and assign group permission to file such that only this group members and no one else can read or modify the files.<br><br>
+                             <h3>Other</h3>
+
+
+                             Any other user who has access to a file. This person has neither created the file, nor he belongs to a usergroup who could own the file. Practically, it means everybody else. Hence, when you set the permission for others, it is also referred as set permissions for the world.<br>
+
+                             Now, the big question arises how does Linux distinguish between these three user types so that a user 'A' cannot affect a file which contains some other user 'B's' vital information/data. It is like you do not want your colleague, who works on your Linux computer, to view your images. This is where Permissions set in, and they define user behavior.<br><br>
+
+                             Let us understand the Permission system on Linux.<br><br>
+                             <h3>Permissions</h3>
+
+                             <ul>Every file and directory in your UNIX/Linux system has following 3 permissions defined for all the 3 owners discussed above.
+                             
+                             <li>Read: This permission give you the authority to open and read a file. Read permission on a directory gives you the ability to lists its content.</li>
+                              <li>Write: The write permission gives you the authority to modify the contents of a file. The write permission on a directory gives you the authority to add, remove and rename files stored in the directory. Consider a scenario where you have to writpermission on file but do not have write permission on the directory where the file is stored. You will be able to modify the file contents. But you will not be able to rename, move or remove the file from the directory.</li>
+                             <li> Execute: In Windows, an executable program usually has an extension ".exe" and which you can easily run. In Unix/Linux, you cannot run a program unless the execute permission is set. If the execute permission is not set, you might still be able to see/modify the program code(provided read & write permissions are set), but not run it.</li>
+                             </ul>
+
+                             File Permissions in Linux/Unix Let's see this in action<br><br>
+
+                             ls - l on terminal gives<br><br>
+
+                             ls - l
+
+                             File Permissions in Linux/Unix
+
+                             Here, we have highlighted '-rw-rw-r--'and this weird looking code is the one that tells us about the permissions given to the owner, user group and the world.<br><br>
+
+                             Here, the first '-' implies that we have selected a file.p><br><br>
+
+                             File Permissions in Linux/Unix<br><br>
+
+                             Else, if it were a directory, d would have been shown.<br><br>
+
+                             File Permissions in Linux/Unix<br><br>
+
+                             <ul> The characters are pretty easy to remember.<br><br>
+
+                             <li> r = read permission</li>
+                              <li>w = write permission</li>
+                             <li> x = execute permission</li>
+                              <li>- = no permission</li>
+                             </ul>
+
+                              Let us look at it this way.<br><br>
+
+                             <ul> The first part of the code is 'rw-'. This suggests that the owner 'Home' can:
+
+                             File Permissions in Linux/Unix
+
+                                 <li>Read the file</li>
+                                 <li>Write or edit the file</li>
+                                 <li>He cannot execute the file since the execute bit is set to '-'.</li>
+                             </ul>
+
+                                 By design, many Linux distributions like Fedora, CentOS, Ubuntu, etc. will add users to a group of the same group name as the user name. Thus, a user 'tom' is  added to a group named 'tom'.<br><br>
+                                 <ul>The second part is 'rw-'. It for the user group 'Home' and group-members can:
+
+                                 <li> Read the file</li>
+                                 <li> Write or edit the file</li>
+                                 </ul>      
+                                 <ul> The third part is for the world which means any user. It says 'r--'. This means the user can only:
+
+                                 <li>Read the file</li></ul>
+                                 <h2>Changing file/directory permissions with 'chmod' command</h2>
+
+                                 Say you do not want your colleague to see your personal images. This can be achieved by changing file permissions.<br><br>
+
+                                 We can use the 'chmod' command which stands for 'change mode'. Using the command, we can set permissions (read, write, execute) on a file/directory for the  owner, group and the world. Syntax:<br><br>
+
+                                 chmod permissions filename<br><br>
+
+                                 <ol>There are 2 ways to use the command -
+
+                                 <li>Absolute mode</li>
+                                 <li>Symbolic mode</li>
+
+                                 <h2>Absolute(Numeric) Mode</h2>
+
+                                 In this mode, file permissions are not represented as characters but a three-digit octal number.<br><br>
+
+                                 The table below gives numbers for all for permissions types.
+                                <table>
+                                 <tr>
+    <th>Number</th>
+    <th>Permission Type</th>
+    <th>Symbol</th>
+  </tr>
+  <tr>
+    <td>0 </td>
+    <td>No permisssion</td>
+    <td>---</td>
+  </tr>
+  <tr>
+    <td>1 </td>
+    <td>Execute</td>
+    <td>--x</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Write</td>
+    <td>-w-</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Execute + Write</td>
+    <td>-wx</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Read</td>
+    <td>r--</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Read + Execute</td>
+    <td>r-x</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Read + Write</td>
+    <td>rw-</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Read + write + Execute</td>
+    <td>rwx</td>
+</tr>
+</table>
+
+Let's see the chmod command in action.<br><br>
+
+In the above-given terminal window, we have changed the permissions of the file 'sample to '764'.<br><br>
+
+<ul>'764' absolute code says the following:
+
+    <li>Owner can read, write and execute</li>
+    <li>Usergroup can read and write</li>
+    <li>World can only read</li>
+</ul>
+<b>This is shown as '-rwxrw-r-</b><br>
+
+This is how you can change the permissions on file by assigning an absolute number.
+<h2>Symbolic Mode</h2>
+
+<p>In the Absolute mode, you change permissions for all 3 owners. In the symbolic mode, you can modify permissions of a specific owner. It makes use of mathematical symbols to modify the file permissions.</p>
+                         <table>
+                             <tr>
+                                 <th>Operator</th>
+                                 <th>Description</th>
+                                 </tr>
+                                 <tr>
+                                 <td>+</td>
+                                 <td>Adds a permission to a file or directory</td> 
+                                 </tr>
+                                 <tr>
+                                 <td>-</td>
+                                 <td>Removes the permission</td>   
+                                 </tr>
+                                 <tr>
+                                 <td>=</td>
+                                 <td>Sets the permission and overrides the permissions set earlier.</td>
+                                 </tr>
+                        </table>
+The various owners are represented as -
+<h4>User Denotation</h4>
+<table>
+  <!--<tr>
+    <th></th>
+    <th></th>
+  </tr>-->
+  <tr>
+    <td>u</td>
+    <td>user/owner</td>    
+  </tr>
+  <tr>
+    <td>g</td>
+    <td>group</td>  
+  </tr>
+  <tr>
+    <td>o</td>
+    <td>other</td>    
+  </tr>
+  <tr>
+    <td>a</td>
+    <td>all</td>
+  </tr>
+  <tr>
+    
+</table>
+We will not be using permissions in numbers like 755 but characters like rwx. Let's look into an example<br><br>
+<h2>Changing Ownership and Group</h2>
+
+For changing the ownership of a file/directory, you can use the following command:<br>
+
+chown user<br><br>
+
+In case you want to change the user as well as group for a file or directory use the command<br>
+
+chown user:group filename<br><br>
+
+<!--Let's see this in action<br>-->
+
+In case you want to change group-owner only, use the command
+<br>
+chgrp group_name filename<br>
+
+'chgrp' stands for change group.<br><br>
+
+<ul><h2>Tip:</h2>
+
+    <li>The file /etc/group contains all the groups defined in the system
+    You can use the command "groups" to find all the groups you are a member of</li>
+
+    <li>File Permissions in Linux/Unix
+    You can use the command newgrp to work as a member a group other than your default group</li>
+
+   
+    <li>You cannot have 2 groups owning the same file.</li>
+    <li>You do not have nested groups in Linux. One group cannot be sub-group of other</li>
+    <li>x- eXecuting a directory means Being allowed to "enter" a dir and gain possible access to sub-dirs</li>
+    <li>There are other permissions that you can set on Files and Directories which will be covered in a later advanced tutorial</li></ul><br><br>
+
+<ul><h2>Summary:</h2>
+
+    <li>Linux being a multi-user system uses permissions and ownership for security.</li>
+    <li>There are three user types on a Linux system viz. User, Group and Other</li>
+   <li> Linux divides the file permissions into read, write and execute denoted by r,w, and x</li>
+    <li>The permissions on a file can be changed by 'chmod' command which can be further divided into Absolute and Symbolic mode</li>
+    <li>The 'chown' command can change the ownership of a file/directory. Use the following commands: chown user file or chown user:group file</li>
+   <li> The 'chgrp' command can change the group ownership chrgrp group filename</li>
+    <li>What does x - eXecuting a directory mean? A: Being allowed to "enter" a dir and gain possible access to sub-dirs.</li></ul>
+
+</p>
+</div>
+</div>
+</div>
+<script>
+         $(document).ready(function(){
+         $('[data-toggle="tooltip"]').tooltip();   
+         });
+</script>
+</body>
+</html>

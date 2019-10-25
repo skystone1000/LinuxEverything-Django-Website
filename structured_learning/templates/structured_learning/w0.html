@@ -1,0 +1,124 @@
+{% extends 'base_layout.html' %}
+
+{% load static from staticfiles %}
+
+{% block content %}
+
+<style type="text/css">
+    body{
+        background-color: black;
+    }
+</style>
+
+
+<div class="row">
+    <div class="col-sm-3">
+        <div class="sticky-top">
+            <nav class="navbar navbar-expand-sm">  
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#What is Linux?">What is Linux?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#How does Linux differ from other Operating systems?">How does Linux differ from other Operating Systems?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#What is the differeance between Unix and Linux?">What is the difference between Unix and Linux?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Who uses Linux?">Who uses Linux?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Who owns Linux?">Who owns Linux?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#How was Linux created?">How was Linux created?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#How can I contribute to Linux?">How can I contribute to Linux?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#How can I get started using Linux?">How can I get started using Linux?</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+<div class="col-sm-9">
+
+    <div class="container bg">
+       <div id="What is Linux?" class="container-fluid " >
+           <h2>What is Linux?</h2>
+           <p>Linux is the best-known and most-used <a href="https://en.wikipedia.org/wiki/Open_source" data-toggles="tooltip">open source</a> operating system. As an operating system, Linux is software that sits underneath all of the other software on a computer, receiving requests from those programs and relaying these requests to the computer’s hardware.<br><br>
+
+               For the purposes of this page, we use the term “Linux” to refer to the Linux kernel, but also the set of programs, tools, and services that are typically bundled together with the Linux kernel to provide all of the necessary components of a fully functional operating system. Some people, particularly members of the Free Software Foundation, refer to this collection as GNU/Linux, because many of the tools included are GNU components. However, not all Linux installations use GNU components as a part of their operating system.<a href="https://en.wikipedia.org/wiki/Android_(operating_system)" data-toggles="tooltip"> Android </a>, for example, uses a Linux kernel but relies very little on GNU tools.<br></p>
+           </div>
+           <div id="How does Linux differ from other Operating systems?" class="container-fluid " >
+               <h2>How does Linux differ from other Operating Systems?</h2>  
+
+               <p>In many ways, Linux is similar to other operating systems you may have used before, such as Windows, OS X, or iOS. Like other operating systems, Linux has a graphical interface, and types of software you are accustomed to using on other operating systems, such as word processing applications, have Linux equivalents. In many cases, the software’s creator may have made a Linux version of the same program you use on other systems. If you can use a computer or other electronic device, you can use Linux.<br><br>
+                   But Linux also is different from other operating systems in many important ways. First, and perhaps most importantly, Linux is open source software. The code used to create Linux is free and available to the public to view, edit, and—for users with the appropriate skills—to contribute to.<br><br>
+
+                   Linux is also different in that, although the core pieces of the Linux operating system are generally common, there are many distributions of Linux, which include different software options. This means that Linux is incredibly customizable, because not just applications, such as word processors and web browsers, can be swapped out. Linux users also can choose core components, such as which system displays graphics, and other user-interface components.<br><br></p>
+               </div>
+               <div id="What is the differeance between Unix and Linux?" class="container-fluid " >
+                   <h2>What is the differeance between Unix and Linux?</h2>
+                   <p>You may have heard of Unix, which is an operating system developed in the 1970s at Bell Labs by Ken Thompson, Dennis Ritchie, and others. Unix and Linux are similar in many ways, and in fact, Linux was originally created to be similar to Unix. Both have similar tools for interfacing with the systems, programming tools, filesystem layouts, and other key components. However, Unix is not free. Over the years, a number of different operating systems have been created that attempted to be “unix-like” or “unix-compatible,” but Linux has been the most successful, far surpassing its predecessors in popularity.<br></p>
+               </div>
+               <div id="Who uses Linux?" class="container-fluid " >
+                   <h2>Who uses Linux?</h2>
+                   <p>You’re probably already using Linux, whether you know it or not. Depending on which user survey you look at, between one- and two-thirds of the webpages on the Internet are generated by servers running Linux.<br><br>
+                       Companies and individuals choose Linux for their servers because it is secure, and you can receive excellent support from a large community of users, in addition to companies like Canonical, SUSE, and Red Hat, which offer commercial support.<br><br>
+                       Many of the devices you own probably, such as Android phones, digital storage devices, personal video recorders, cameras, wearables, and more, also run Linux. Even your car has Linux running under the hood.<br></p>
+                   </div>
+                   <div id="Who owns Linux?" class="container-fluid " >
+                       <h2>Who owns Linux?</h2>
+
+                       <p>By virtue of its open source licensing, Linux is freely available to anyone. However, the trademark on the name “Linux” rests with its creator, Linus Torvalds. The source code for Linux is under copyright by its many individual authors, and licensed under the GPLv2 license. Because Linux has such a large number of contributors from across multiple decades of development, contacting each individual author and getting them to agree to a new license is virtually impossible, so that Linux remaining licensed under the GPLv2 in perpetuity is all but assured.<br></p>
+                   </div>
+                   <div id="How was Linux created?" class="container-fluid " >
+                       <h2>How was Linux created?</h2>
+
+                       <p>Linux was created in 1991 by Linus Torvalds, a then-student at the University of Helsinki. Torvalds built Linux as a free and open source alternative to Minix, another Unix clone that was predominantly used in academic settings. He originally intended to name it “Freax,” but the administrator of the server Torvalds used to distribute the original code named his directory “Linux” after a combination of Torvalds’ first name and the word Unix, and the name stuck.<br></p>
+                   </div>
+                   <div id="How can I contribute to Linux?" class="container-fluid " >
+                       <h2>How can I contribute to Linux?</h2>
+
+                       <P>Most of the Linux kernel is written in the C programming language, with a little bit of assembly and other languages sprinkled in. If you’re interested in writing code for the Linux kernel itself, a good place to get started is in the Kernel Newbies FAQ, which will explain some of the concepts and processes you’ll want to be familiar with.<br><br>
+                           But the Linux community is much more than the kernel, and needs contributions from lots of other people besides programmers. Every distribution contains hundreds or thousands of programs that can be distributed along with it, and each of these programs, as well as the distribution itself, need a variety of people and skill sets to make them successful, including:<br><br>
+                           <ul>
+                               <li>Testers to make sure everything works on different configurations of hardware and software, and to report the bugs when it does not.</li>
+                               <li>Designers to create user interfaces and graphics distributed with various programs.</li>
+                               <li>Writers who can create documentation, how-tos, and other important text distributed with software.</li>
+                               <li>Translators to take programs and documentation from their native languages and make them accessible to people around the world.</li>
+                               <li>Packagers to take software programs and put all the parts together to make sure they run flawlessly in different distributions.</li>
+                               <li>Evangelists to spread the word about Linux and open source in general.</li><br>
+                               <li>And of course developers to write the software itself.</li>
+                           </ul>
+                       </P>
+                       </div>
+                       <div id="How can I get started using Linux?" class="container-fluid " >
+                           <h2>How can I get started uisng Linux?</h2>
+                           <p>There’s some chance you’re using Linux already and don’t know it, but if you’d like to install Linux on your home computer to try it out, the easiest way is to pick a popular distribution that is designed for your platform (for example, laptop or tablet device) and give it a shot. Although there are numerous distributions available, most of the older, well-known distributions are good choices for beginners because they have large user communities that can help answer questions if you get stuck or can’t figure things out. Popular distributions include <a href="https://www.debian.org/" data-toggles="tooltip">Debian</a>, <a href="https://getfedora.org/" data-toggles="tooltip"> Fedora </a>, <a href="https://www.linuxmint.com/" data-toggles="tooltip"> Mint</a>, and <a href="https://www.ubuntu.com/" data-toggles="tooltip">Ubuntu</a>, but there are many others.<br></p>
+                       </div>
+                   </div>
+
+               </div>
+</div>
+
+
+
+         
+<script>
+         $(document).ready(function(){
+         $('[data-toggle="tooltip"]').tooltip();   
+         });
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+      
+
+{% endblock %}

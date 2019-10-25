@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+     <html>
+     <head>
+
+
+                      <title>Basic Linux problem after Installation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+     	<style>
+             body {
+             background-color: #0f121f;
+             }
+             
+</style>
+
+     </head>
+         <body>
+             <div class="container bg-secondary">
+             <div class="jumbotron">
+
+         	<h2> Some common beginner Linux installation issues</h2>
+             <p>In this cursory overview, Mark Rais, provides some of the common reasons why people brand new to Linux have installation failures. The brief article covers issues with Fedora, Gentoo, Mepis, PCLinuxOS, and Ubuntu.<br><br>
+
+             Let me begin by declaring that this is a basic summary for beginners. I do not try to clarify solutions where complex issues such as bad disks and the need for fsck exist. However, in the past few months as I've tried to help more people totally new to Linux switch over, it became obvious that there is a common theme of installation failures that need to be addressed.<br><br>
+
+             I've tried to give examples for specific flavours. But you will quickly find that problems occurring with one flavour also exist with another. I consider the ease of installation of Linux to be vital to its uptake, especially on the desktops, and hope this article helps at least one person avoid a potential installation pain and start using Linux productively.<br><br></p>
+       
+         <h3>Fedora</h3>
+             <p>The anaconda installer used in Fedora is pretty resilient to installation errors. The interface is reasonably easy to follow, even though some new users have gotten confused by a few of the key steps.<br><br>
+
+             However, there are some overt issues that appear after installation, rarely during the install.<br><br>
+
+             The word GRUB just sits on the top left side of the monitor upon reboot. This is almost always a sign that key installation files were corrupted. Again, this can happen due to a bad disc, or improperly downloading and using internet ISOs. However, it can also be a result of really screwed up partitioning. I recommend new users allow Fedora and/or CentOS installer to auto-manage the partitions and to format all partitions you plan to use for Linux (obviously not those used for other things).<br><br>
+
+             I have also noted that one new user ran through the whole Fedora install process, only to find that certain dependencies and key functions failed because they had not properly selected packages needed to properly operate Fedora in the first place. I'm not sure why the install process does not include some form of "default core" selection, but if you click on the customise option you as a new user are left to ensure key things like Gnome or KDE desktop are included. This is also the case with other installations like Gentoo. Be sure to choose all of the packages needed, and if in doubt as a newbie, then remember that including is better than not including.<br><br>
+
+             The overall installation process has also become much longer for Fedora, and seems a bit of a turn off for those new users who prefer a one disk install. I disagree with this preference however, because the benefit of multi-disk distros is that they include a whole lot more that can be installed on systems that 1. may not have an internet connection or 2. need to be ready and working immediately upon installation.<br></p>
+
+         <h3>Gentoo</h3>
+             <p>I use Gentoo in situations where fine tuned control and performance are essential. It's a damn good flavour, but it is questionable whether Gentoo should be used by someone brand new to Linux. In any case, the number one biggest issue I've found people completely new to Linux have with Gentoo installation has to do with the total compile and completion time.<br><br>
+
+             To set the record straight, Gentoo is allowing a user to pre-compile many applications and parameters. The benefit is measurable in gained performance. By compiling key conditions with the Kernel itself, you gain some beneficial performance increases. However, for a new user who is often just trying to get up to speed, Gentoo may seem to take an eternity to install.<br><br>
+
+             But for new users, this issue is reconciled with two characteristics. First, Gentoo comes as a Live-CD, so it means you can immediately start using it, getting familiar with the interface without having to install it. Once you are ready to install, please understand the reasons for the slow compile/install process and during the compile stages just go watch a tv show or read a good book (it does not have to be War and Peace).<br><br>
+
+             The second biggest issue with Gentoo installation is that new users are often confused or intimidated by the many configuration options. If you are new to Linux and planning to install Gentoo, I recommend you do your first time install with all of the defaults. I have a summary of the Gentoo defaults that may help ease your concerns. Otherwise, tinkering with one or more of the configurations is likely to cause the dreaded: Install Failed!<br><br>
+
+             Some examples include, watching the entire process start, enjoying the fact that things are moving right along (slowly, but surely) and then only to come back to the computer a half hour into the install to see this: "Partitix_onResizeError: FATAL: partition could not resize."<br><br>
+
+             This failure, along with a plethora of other potential errors, usually results from either what you designated in terms of your installation settings (what apps to compile), or from incorrectly designating partition information. Having partition information from a previously installed OS that is identified by Gentoo but not properly cleared prior to installation is another culprit.<br><br>
+
+         <h3>Mepis</h3>
+             <p>As with other well thought out graphical installations, the process is fairly seemless. There are a few kinks that new users tend to get stuck on, including partition selection.<br><br>
+
+             Trying to properly install Mepis on a resized portion of a Windows drive remains one of the top confusion points for new users. I personally have an aversion with sharing a Linux installation with Windows on the same hard disk and have always recommended not partitioning, but instead using a second drive. When this is not an option, or for those who don't have the money to buy a second hard disk, the resize method is reasonable but tends to encounter more errors. The most common is that, thanks to the unique way that Windows supports its file system, it tends to create bad sectors on the disk which must first be addressed prior to installing Mepis.<br><br>
+
+             Make sure you run a full disk scan and correct any disk errors prior to the installation process. This is vitally important if you plan to share the drive with Mepis, and plan to use the resize feature.<br></p>
+
+         <h3>PCLinuxOS</h3>
+             <p>This is one of the flavours that I believe truly gears itself toward those switching from Windows and new to Linux. In fact, if a new user conscientiously follows the installation instructions (found just above the install icon) word for word, they will most likely avoid installation issues.<br><br>
+
+             PCLinuxOS documentation is quite thorough and well presented. Although there is a step missing in the installation instructions with regard to identifying which partitions should be formatted (screen with check boxes that need selection).<br><br>
+
+             One of the major issues with installing PCLinuxOS from the Live-CD is that the computer does not have a network connection and therefore aborts the install process.<br><br>
+
+             Another one that I caught with a new user trying to install the version 0.93a from Live-CD is that the user had previously installed a different flavour. The existing partition information was recognised by Gentoo and confused the new user.<br><br>
+
+             The worst part is that it appears that if you had previously installed a Linux, then go to the PCLinuxOS partition configuration and try to use the default or automated partition configurations, all goes well until about half way into the application installation. The installer then just aborts without any warning. As a new user, you have no idea what happened since the whole install just stops.<br><br>
+
+             The way to ensure this is avoided is to delete all existing partition mount points on the partition you wish to install. It's also very dangerous if a new user already has Windows on another partition of the same disk and accidentally clears that used partition.<br><br>
+
+             Getting past the mount point/partitioning is done best by following step-by-step the excellent installation document. Note how it specifically indicates that a user should first create a swap space, then a /home, then the /. Proceeding with these steps resolves nearly all install failures.<br><br>
+
+             Finally, the installation instructions also do not include a note that if you custom configure your partitions, it         requires a reboot prior to running the rest of the install process. You'll see the message come up and need to reboot, even though the docs do not reference this.<br><br>
+
+             Overall though, based on new user feedback I've personally encountered, PCLinuxOS is certainly a reasonably easy installation even for a total new user.<br></p>
+
+         <h3>Ubuntu</h3>
+             <p>Let me begin by saying that for the most part, the Ubuntu team has done a good job of ensuring installation is automated and complex things in the background remain transparent to a new user.<br><br>
+
+             The biggest complaints I've had with regard to Ubuntu installation (again this is talking with those brand new to Linux) is that terminology during install is sometimes overly filled with technical jargon and does not inspire confidence that everything is going correctly. This is especially the case for those using the SE (server edition).<br><br>
+
+             The next biggest problem that I've seen occur with a new user installing Ubuntu, is that the disk they have or the ISOs they've downloaded are corrupt. It is essential if you are downloading any Linux version from the internet, that you perform the vital checksum.<br><br>
+
+              When something goes bad with an Ubuntu install, it is usually the result of two things:
+             <ol type="1">
+             <li>not connected to internet so key dependencies can not be automatically reconciled</li>
+             <li>bad disc burn or bad download</li>
+             </ol><br>
+             <p>I've found that if the disk is in good shape, and the computer is connected to the Internet for the installation process, the entire routine works fairly well and ensures most issues and dependencies are transparently resolved.<br><br>
+
+             And finally, and this one may seem bloody foolish, but it happens sometimes to folks who are new to the whole endeavour, and should be treated with some grace. Ubuntu is not Kubuntu. Ubuntu relies on Gnome desktop and instructions for post-installation configurations are not the same as in Kubuntu, which relies on KDE desktop. This is more of an after install enhancement/correction issue, but it has come up and I wanted to include it for the rare situation where someone misunderstands the labelling.<br><br></p>
+
+         <h3>Conclusion</h3>
+             <p>In most cases the key installation issue stems from bad burns or bad ISO downloads. Some new users get the two confused, assuming that a good md5check or a good DVD/CD burn indicates valid data. They are both required to ensure your installation is smooth.<br><br>
+
+             Next, many new users get into installation muddles as a direct result of trying to manually configure the partitions and assign mount points like /boot, swap, /, and /home.<br><br>
+
+             In some cases it makes sense to fiddle with these configurations, but often new users are trying to install Linux on an independent hard disk and are fine grain tuning the mount points. I strongly recommend new users, especially if they are using Linux on its own disk, simply use automatic partitioning.<br><br>
+
+             Other problems during this part of the installation are related to the resizing of a Windows partition to accommodate Linux, which in my view is not the best approach. It introduces many potential pitfalls for brand new users. However, for those who wish to perform such a resizing, most flavours come with documentation that clarifies how to do this and requires someone to be patient enough to go through it step-by-step.<br><br>
+
+             I hope this brief summary will help further reduce the number of new user installation concerns, and get everyone switched over to Linux in time for the 2008 Olympics, which has nothing to do with Linux but would be a great goal!</p>
+        </div>
+    </div>
+
+         </body>
+</html>

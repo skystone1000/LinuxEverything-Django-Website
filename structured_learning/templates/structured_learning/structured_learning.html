@@ -1,0 +1,77 @@
+{% extends 'base_layout.html' %}
+
+{% load static from staticfiles %}
+
+{% block content %}
+<style type="text/css">
+	body{
+		background-color: #ff6f00;
+		color: black;
+	}
+	.bg{
+		background-color: #ffa000;
+	}
+</style>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8">
+				<br>
+				<h1><b>Structured learning</b></h1>
+				<h4>Shifting from Windows to Linux may seem a daunting task but has a lots of uses and benifits and as we get used to it we get benifitted a lot we have setion which tells all the benifits of Linux, so here we are to help you out in shifting from Windows to Linux, from the very Basics, we will help you from Installing Linux to its commands and permissions and all the things that will be needed.  </h4>
+				<br>
+			</div>
+			<div class="col-sm-4">
+				<img src="https://www.structuredlearning.net/wp-content/uploads/2012/08/SL_Logo_New.png">
+			</div>
+		</div>	
+	</div>
+
+
+	<div class="container">
+		<div class="list-group">
+			<a href="{% url 'structured_learning:w0' %}" class="bg list-group-item list-group-item-action flex-column align-items-start">
+				<div class="d-flex w-100 justify-content-between">
+					<h5 class="mb-1">Basics about linux</h5>
+					<small>3 days ago</small>
+				</div>
+			</a>
+			<a href="{% url 'structured_learning:w1' %}" class="bg list-group-item list-group-item-action flex-column align-items-start">
+				<div class="d-flex w-100 justify-content-between">
+					<h5 class="mb-1">Difference between Windows,Linux and Mac</h5>
+					<small>3 days ago</small>
+				</div>
+			</a>
+			<a href="w2" class="bg list-group-item list-group-item-action flex-column align-items-start">
+				<div class="d-flex w-100 justify-content-between">
+					<h5 class="mb-1">Installation of Linux</h5>
+					<small>3 days ago</small>
+				</div>
+			</a>
+			<a href="w3" class="bg list-group-item list-group-item-action flex-column align-items-start">
+				<div class="d-flex w-100 justify-content-between">
+					<h5 class="mb-1">Basic Terminal commands</h5>
+					<small>3 days ago</small>
+				</div>
+			</a>
+			<a href="w4" class="bg list-group-item list-group-item-action flex-column align-items-start">
+				<div class="d-flex w-100 justify-content-between">
+					<h5 class="mb-1">Basic linux problems after installation</h5>
+					<small>3 days ago</small>
+				</div>
+			</a>
+			<a href="w5" class="bg list-group-item list-group-item-action flex-column align-items-start">
+				<div class="d-flex w-100 justify-content-between">
+					<h5 class="mb-1">Permissions of files system</h5>
+					<small>3 days ago</small>
+				</div>
+			</a>
+			
+
+			<br>
+		</div>
+	</div>	
+
+
+{% endblock %}
