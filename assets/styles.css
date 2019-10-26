@@ -1,0 +1,56 @@
+img{
+	max-height: 300px;
+}
+
+.imgs{
+	max-height: 100px;
+}
+
+body{
+	background-color: #0f121f;
+	background-repeat-y: no-repeat;
+	color: #fff; 
+	text-align: center;
+}
+
+body *{
+	font-family: Ubuntu;
+}
+
+h1,h2,h3,h4,h5{
+	font-weight: normal;
+	margin: 0;
+}
+
+a, a:hover, a:visited{
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 300;
+}
+
+#collapsibleNavbar {
+    overflow: hidden;
+    background-color: black;
+}
+
+#collapsibleNavbar a {
+    padding: 14px 16px;
+}
+
+.jumbotron{
+	height: 100px;
+	padding-top: 15px;
+	background-color: black;
+	color: #00FF00;
+}
+
+.navbar{
+	background-color: black;
+}
